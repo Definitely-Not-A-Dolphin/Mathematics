@@ -20,4 +20,4 @@ elif(dec1 == "all"):
   if(total1 >= 2.718281828459045):
     print("\nWait, that's illegal!")
 else:
-print("That's not a valid input)
+  print("That's not a valid input)
