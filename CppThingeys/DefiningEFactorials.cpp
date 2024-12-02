@@ -17,7 +17,6 @@ int main() {
     int dec3;
     cin >> dec3;
 
-
     cout << '\n' << "Would you like to compare all the values of e up to that point? ";
     string dec2;
     cin >> dec2;
