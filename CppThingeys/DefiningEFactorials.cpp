@@ -8,7 +8,6 @@ int finder(list<string> searchedList, string searchedWord);
 int factorial(unsigned long long n);
 
 int main() {
-
     cout << "How many terms do you like to add? ";
     int dec1;
     cin >> dec1;
