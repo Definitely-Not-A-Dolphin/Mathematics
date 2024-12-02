@@ -4,7 +4,8 @@
 #include <string>
 using namespace std;
 
-int finder(list<string> searchedList, string searchedWord);
+bool finder(list<string> searchedList, string searchedWord);
+
 int factorial(unsigned long long n);
 
 int main() {
@@ -12,31 +13,27 @@ int main() {
     int dec1;
     cin >> dec1;
 
-    cout << '\n' << "Would you like to compare all the values of e up to that point? ";
-    string dec2;
-    cin >> dec2;
-
-    cout << '\n' << "To what precision do you want to know the values? ";
+    cout << '\n' << "To what precision would you like to know the values? ";
     int dec3;
     cin >> dec3;
 
+
+    cout << '\n' << "Would you like to compare all the values of e up to that point? ";
+    string dec2;
+    cin >> dec2;
 
     list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea"
     ,"Ye","ye"}; 
 
     long double total1 = 0;
 
-    int found = finder(yesList, dec2);
-
-    if(found == 1) {
-        
+    if(finder(yesList, dec2)) {
         for (int k = 0; k <= dec1-1; ++k) {
             total1 += 1.0L / factorial(k);
             cout << '\n' << "For " << k+1 << " terms added: " << setprecision(dec3) << total1;
         }
-    };
-    
-    if(found == 0) {
+    }
+    else{
         for (int j = 0; j <= dec1-1; ++j) {
             total1 += 1.0L / factorial(j);
         }
@@ -44,16 +41,13 @@ int main() {
     };
 }
 
-int finder(list<string> searchedList, string searchedWord) {
-    int result = 0;
+bool finder(list<string> searchedList, string searchedWord) {
+    bool result = false;
 
     for(string comparer : searchedList) {
         if(searchedWord == comparer){
-            result = 1;
+            result = true;
         }
-        else{
-
-        };
     };
 
     return result;
