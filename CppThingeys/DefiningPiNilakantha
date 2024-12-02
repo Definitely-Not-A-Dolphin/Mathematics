@@ -53,7 +53,7 @@ double nilakantha(int n) {
     double total = 3;
 
     for (double j=1;j<=n;++j){
-        total += pow(-1,j+1)*4/((2j)*(2j+1)*(2j+2));
+        total += pow(-1,j+1)*4/((2*j)*(2*j+1)*(2*j+2));
     };
 
     return total;
