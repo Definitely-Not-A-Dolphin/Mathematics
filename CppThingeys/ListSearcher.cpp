@@ -3,24 +3,24 @@
 #include <string>
 using namespace std;
 
-int finder(list<string> searched, string thing);
+bool finder(list<string> searched, string thing);
 
 int main() {
 
     list<string> words = {"valkoinen", "vihrea"};
     cout << finder(words, "sinivalkoinen");
 
-    if(finder(words,"sinivalkoinen") == 1){
+    if(finder(words,"sinivalkoinen")){
         cout << "Yippie";
     }
 }
 
-int finder(list<string> searched, string thing) {
-    int result = 0;
+bool finder(list<string> searched, string thing) {
+    int result = false;
 
     for(string sana : searched) {
         if(sana == thing){
-            result = 1;
+            result = true;
         }
     };
 
