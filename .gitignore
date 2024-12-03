@@ -1,0 +1,6 @@
+# Executables without extension
+CppThingeys/*
+!CppThingeys/*.*
+
+# Misc
+.vscode
