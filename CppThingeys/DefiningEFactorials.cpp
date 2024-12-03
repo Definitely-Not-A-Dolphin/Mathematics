@@ -14,16 +14,16 @@ int main() {
   int terms;
   cin >> terms;
 
-  cout << '\n' << "To what precision would you like to know the values? ";
+  cout << endl << "To what precision would you like to know the values? ";
   int precision;
   cin >> precision;
 
-  cout << '\n'
+  cout << endl
        << "Would you like to compare all the values of e up to that point? ";
   string compare;
   cin >> compare;
 
-  cout << '\n' << "To what power would you like to raise e? ";
+  cout << endl << "To what power would you like to raise e? ";
   int power;
   cin >> power;
 
@@ -35,7 +35,7 @@ int main() {
   if (listChecker(yesList, compare)) {
     for (int k = 0; k <= terms - 1; ++k) {
       total1 += (pow(power, k)) / factorial(k);
-      cout << '\n'
+      cout << endl
            << "For " << k + 1 << " terms added: " << setprecision(precision)
            << total1;
     }
@@ -43,7 +43,7 @@ int main() {
     for (int j = 0; j <= terms - 1; ++j) {
       total1 += (pow(power, j)) / factorial(j);
     }
-    cout << '\n'
+    cout << endl
          << "For " << terms << " terms added: " << setprecision(precision)
          << total1;
   };

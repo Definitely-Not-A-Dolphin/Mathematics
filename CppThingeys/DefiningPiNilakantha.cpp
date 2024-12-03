@@ -18,7 +18,7 @@ int main() {
   cout << endl << "To what precision would you like to know the values? ";
   cin >> precision;
 
-  cout << '\n'
+  cout << endl
        << "Would you like to compare all the values of pi up to that point? ";
   string compare;
   cin >> compare;
