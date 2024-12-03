@@ -33,9 +33,9 @@ int main(){
 }
 
 string primer(int n){
-    int d = 0;
+    int d = 1;
 
-    for (int i = 1;i <= n+1;++i){
+    for (int i = 1;i <= ceil((n+1)/2);++i){
         if(n%i == 0){
             d+=1;
         }
