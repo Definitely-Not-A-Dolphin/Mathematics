@@ -1,42 +1,46 @@
-#include <iostream>
+#include <cmath>
 #include <iomanip>
+#include <iostream>
 #include <list>
 #include <string>
 using namespace std;
 
 bool finder(list<string> searchedList, string searchedWord);
 
-int factorial(unsigned long long n);
+unsigned long long factorial(int n);
 
 int main() {
     cout << "How many terms do you like to add? ";
-    int dec1;
-    cin >> dec1;
+    int terms;
+    cin >> terms;
 
     cout << '\n' << "To what precision would you like to know the values? ";
-    int dec3;
-    cin >> dec3;
+    int precision;
+    cin >> precision;
 
     cout << '\n' << "Would you like to compare all the values of e up to that point? ";
-    string dec2;
-    cin >> dec2;
+    string compare;
+    cin >> compare;
 
-    list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea"
-    ,"Ye","ye"}; 
+    cout << '\n' << "To what power would you like to raise e? ";
+    int power;
+    cin >> power;
+
+    list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea","Ye","ye"}; 
 
     long double total1 = 0;
 
-    if(finder(yesList, dec2)) {
-        for (int k = 0; k <= dec1-1; ++k) {
-            total1 += 1.0L / factorial(k);
-            cout << '\n' << "For " << k+1 << " terms added: " << setprecision(dec3) << total1;
+    if(finder(yesList, compare)) {
+        for (int k = 0; k <= terms-1; ++k) {
+            total1 += (pow(power,k))/ factorial(k);
+            cout << '\n' << "For " << k+1 << " terms added: " << setprecision(precision) << total1;
         }
     }
     else{
-        for (int j = 0; j <= dec1-1; ++j) {
-            total1 += 1.0L / factorial(j);
+        for (int j = 0; j <= terms-1; ++j) {
+            total1 += (pow(power,j))/ factorial(j);
         }
-    cout << '\n' << "For " << dec1 << " terms added: " << setprecision(dec3) << total1;
+    cout << '\n' << "For " << terms << " terms added: " << setprecision(precision) << total1;
     };
 }
 
@@ -52,8 +56,8 @@ bool finder(list<string> searchedList, string searchedWord) {
     return result;
 }
 
-int factorial(unsigned long long n) {
-    unsigned long long subtotal = 1;
+unsigned long long factorial(int n) {
+    int subtotal = 1;
     
     for(int i = 1; i <= n; ++i) {
         subtotal *= i;

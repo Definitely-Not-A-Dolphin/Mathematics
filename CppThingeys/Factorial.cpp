@@ -1,13 +1,25 @@
 #include <iostream>
 using namespace std;
 
+unsigned long long factorial(int n);
+
 int main() {
-    unsigned long long n = 2;
-    unsigned long long subtotal = 1;
     
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << endl << factorial(n) << endl;
+    
+}
+
+unsigned long long factorial(int n){
+
+    unsigned long long total = 1;
+
     for(int i = 1; i <= n; i++){
-        subtotal *= i;
+        total *= i;
     }
-  
-    cout << subtotal;
+
+    return total;
 }
