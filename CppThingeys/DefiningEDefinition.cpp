@@ -7,31 +7,34 @@ using namespace std;
 
 bool finder(list<string> searchedList, string searchedWord);
 
-double definition(int n);
+long double definition(long double n,long double p);
 
 int main(){
-    int n;
     cout << endl << "What would you like n to be? ";
+    int n;
     cin >> n;
 
-    int p;
     cout << endl << "To what precision would you like to know the values? ";
-    cin >> p;
+    int precision;
+    cin >> precision;
 
     cout << '\n' << "Would you like to compare all the values of e up to that point? ";
-    string dec3;
-    cin >> dec3;
+    string compare;
+    cin >> compare;
 
-    list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea"
-    ,"Ye","ye"};
+    cout << endl << "To what power would you like to raise e? ";
+    int power;
+    cin >> power;
 
-    if(finder(yesList, dec3)){
+    list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea","Ye","ye"};
+
+    if(finder(yesList, compare)){
         for (int i=1;i <= n; ++i){
-            cout << endl << "If n = " << i << ": " << setprecision(p) << definition(i);
+            cout << endl << "If n = " << i << ": " << setprecision(precision) << definition(i,power);
         }
     }
     else{
-        cout << endl << "If n = " << n << ": " << setprecision(p) << definition(n);
+        cout << endl << "If n = " << n << ": " << setprecision(precision) << definition(n,power);
     };
 
     return 0;
@@ -49,8 +52,9 @@ bool finder(list<string> searchedList, string searchedWord) {
     return result;
 }
 
-double definition(int n) {
-    double total = pow(1 + 1 / n,n);
+long double definition(long double n,long double p) {
+    
+    long double total = pow(1 + p/n,n);
 
     return total;
 }

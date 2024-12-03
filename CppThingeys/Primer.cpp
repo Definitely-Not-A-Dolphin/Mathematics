@@ -10,9 +10,9 @@ bool finder(list<string> searched, string thing);
 
 int main(){
 
-    int x;
+    int number;
     cout << "Enter a number: ";
-    cin >> x;
+    cin >> number;
 
     list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea"
     ,"Ye","ye"}; 
@@ -22,12 +22,12 @@ int main(){
     cin >> y;
 
     if(finder(yesList, y)){
-        for(int k=1; k <= x;++k){
+        for(int k=1; k <= number;++k){
             cout << endl << k << " is " << primer(k);
         }
     }
     else{
-        cout << endl << x << " is " << primer(x);
+        cout << endl << number << " is " << primer(number);
     }
 
 }
