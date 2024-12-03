@@ -5,11 +5,11 @@
 #include <string>
 using namespace std;
 
-bool finder(list<string> searchedList, string searchedWord);
+bool listChecker(list<string> searchedList, string searchedWord);
 
 long double nilakantha(int n);
 
-int main(){
+int main() {
     int n;
     cout << endl << "What would you like n to be? ";
     cin >> n;
@@ -25,7 +25,7 @@ int main(){
     list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea"
     ,"Ye","ye"};
 
-    if(finder(yesList, compare)){
+    if(listChecker(yesList, compare)){
         for (int i=1;i <= n; ++i){
             cout << endl << "If n = " << i << ": " << setprecision(precision)<< nilakantha(i);
         }
@@ -37,11 +37,11 @@ int main(){
     return 0;
 }
 
-bool finder(list<string> searchedList, string searchedWord) {
+bool listChecker(list<string> SearchedList, string SearchedWord) {
     bool result = false;
 
-    for(string comparer : searchedList) {
-        if(searchedWord == comparer){
+    for(string comparer : SearchedList) {
+        if(comparer == SearchedWord){
             result = true;
         }
     };

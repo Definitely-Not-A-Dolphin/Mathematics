@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-bool finder(list<string> searchedList, string searchedWord);
+bool finlistCheckerder(list<string> searchedList, string searchedWord);
 
 long double definition(long double n,long double p);
 
@@ -28,7 +28,7 @@ int main(){
 
     list<string> yesList = {"Yes", "yes","Yeah","yeah","Yea","yea","Ye","ye"};
 
-    if(finder(yesList, compare)){
+    if(listChecker(yesList, compare)){
         for (int i=1;i <= n; ++i){
             cout << endl << "If n = " << i << ": " << setprecision(precision) << definition(i,power);
         }
@@ -40,11 +40,11 @@ int main(){
     return 0;
 }
 
-bool finder(list<string> searchedList, string searchedWord) {
+bool listChecker(list<string> searchedList, string searchedWord) {
     bool result = false;
 
     for(string comparer : searchedList) {
-        if(searchedWord == comparer){
+        if(comparer == searchedWord){
             result = true;
         }
     };

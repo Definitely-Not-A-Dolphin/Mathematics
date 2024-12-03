@@ -6,9 +6,9 @@ using namespace std;
 
 string primer(int n);
 
-bool finder(list<string> searched, string thing);
+bool listChecker(list<string> searchedList, string searchedWord);
 
-int main(){
+int main() {
 
     int number;
     cout << "Enter a number: ";
@@ -21,7 +21,7 @@ int main(){
     cout << endl << "Do you want to know all the numbers up to that point? ";
     cin >> y;
 
-    if(finder(yesList, y)){
+    if(listChecker(yesList, y)){
         for(int k=1; k <= number;++k){
             cout << endl << k << " is " << primer(k);
         }
@@ -52,11 +52,11 @@ string primer(int n){
     }
 }
 
-bool finder(list<string> searched, string thing) {
+bool listChecker(list<string> searchedList, string searchedWord) {
     bool result = false;
 
-    for(string sana : searched) {
-        if(sana == thing){
+    for(string comparer : searchedList) {
+        if(comparer == searchedWord){
             result = true;
         }
     };

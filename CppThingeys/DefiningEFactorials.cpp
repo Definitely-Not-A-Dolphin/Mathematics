@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-bool finder(list<string> searchedList, string searchedWord);
+bool listChecker(list<string> searchedList, string searchedWord);
 
 unsigned long long factorial(int n);
 
@@ -30,7 +30,7 @@ int main() {
 
     long double total1 = 0;
 
-    if(finder(yesList, compare)) {
+    if(listChecker(yesList, compare)) {
         for (int k = 0; k <= terms-1; ++k) {
             total1 += (pow(power,k))/ factorial(k);
             cout << '\n' << "For " << k+1 << " terms added: " << setprecision(precision) << total1;
@@ -44,11 +44,11 @@ int main() {
     };
 }
 
-bool finder(list<string> searchedList, string searchedWord) {
+bool listChecker(list<string> searchedList, string searchedWord) {
     bool result = false;
 
     for(string comparer : searchedList) {
-        if(searchedWord == comparer){
+        if(comparer == searchedWord){
             result = true;
         }
     };
