@@ -1,6 +1,1 @@
-# Executables without extension
-CppThingeys/*
-!CppThingeys/*.*
-
-# Misc
-.vscode/
+README.by-definition.md

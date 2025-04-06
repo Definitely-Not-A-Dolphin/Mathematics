@@ -26,27 +26,27 @@ int main() {
     for (int i = 1; i <= n; i++) {
       std::cout << std::endl
                 << "If n = " << i << ": " << std::setprecision(precision)
-                << nilakantha(i);
+                << nilakanthaMethod(i);
     }
   } else {
     std::cout << std::endl
               << "If n = " << n << ": " << std::setprecision(precision)
-              << nilakantha(n);
+              << nilakanthaMethod(n);
   };
 
   return 0;
 }
 
-long double nilakantha(int n) {
+long double nilakanthaMethod(int n) {
   long double total = 3;
 
   for (long double j = 1; j <= n; ++j) {
-    total += nilakanthaTerm(j);
+    total += nilakanthaMethodTerm(j);
   };
 
   return total;
 }
 
-long double nilakanthaTerm(int n) {
+long double nilakanthaMethodTerm(int n) {
   return pow(-1, n + 1) * 4 / ((2 * n) * (2 * n + 1) * (2 * n + 2));
 }

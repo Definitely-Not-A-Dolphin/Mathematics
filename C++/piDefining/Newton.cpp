@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "../mathemagic.cpp"
+#include "../mathFunctions.cpp"
 
 long double newtonMethod(int n);
 long double newtonMethodTerm(long double k);

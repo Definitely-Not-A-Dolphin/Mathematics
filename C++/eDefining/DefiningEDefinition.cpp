@@ -1,60 +1,45 @@
 #include <cmath>
 #include <iomanip>
 #include <iostream>
-#include <list>
 #include <string>
-using namespace std;
 
-bool listChecker(list<string> searchedList, string searchedWord);
+#include "../mathFunctions.cpp"
 
 long double definition(long double n, long double p);
 
 int main() {
-  cout << endl << "What would you like n to be? ";
+  std::cout << "What would you like n to be? ";
   int n;
-  cin >> n;
+  std::cin >> n;
 
-  cout << endl << "To what precision would you like to know the values? ";
+  std::cout << std::endl
+            << "To what precision would you like to know the values? ";
   int precision;
-  cin >> precision;
+  std::cin >> precision;
 
-  cout << endl
-       << "Would you like to compare all the values of e up to that point? ";
-  string compare;
-  cin >> compare;
+  std::cout
+      << std::endl
+      << "Would you like to compare all the values of e up to that point? ";
+  std::string compare;
+  std::cin >> compare;
 
-  cout << endl << "To what power would you like to raise e? ";
+  std::cout << std::endl << "To what power would you like to raise e? ";
   int power;
-  cin >> power;
+  std::cin >> power;
 
-  list<string> yesList = {"Yes", "yes", "Yeah", "yeah",
-                          "Yea", "yea", "Ye",   "ye"};
-
-  if (listChecker(yesList, compare)) {
+  if (compare == "y" or compare == "Y") {
     for (int i = 1; i <= n; ++i) {
-      cout << endl
-           << "If n = " << i << ": " << setprecision(precision)
-           << definition(i, power);
+      std::cout << std::endl
+                << "If n = " << i << ": " << std::setprecision(precision)
+                << definition(i, power);
     }
   } else {
-    cout << endl
-         << "If n = " << n << ": " << setprecision(precision)
-         << definition(n, power);
+    std::cout << std::endl
+              << "If n = " << n << ": " << std::setprecision(precision)
+              << definition(n, power);
   };
 
   return 0;
-}
-
-bool listChecker(list<string> searchedList, string searchedWord) {
-  bool result = false;
-
-  for (string comparer : searchedList) {
-    if (comparer == searchedWord) {
-      result = true;
-    }
-  };
-
-  return result;
 }
 
 long double definition(long double n, long double p) {

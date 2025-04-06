@@ -1,39 +1,33 @@
 #include <cmath>
 #include <iostream>
-#include <list>
 #include <string>
-using namespace std;
 
-string primer(int n);
-
-bool listChecker(list<string> searchedList, string searchedWord);
+std::string primer(int n);
 
 int main() {
 
   int number;
-  cout << "Enter a number: ";
-  cin >> number;
+  std::cout << "Enter a number: ";
+  std::cin >> number;
 
-  list<string> yesList = {"Yes", "yes", "Yeah", "yeah",
-                          "Yea", "yea", "Ye",   "ye"};
+  std::string y;
+  std::cout << std::endl
+            << "Do you want to know all the numbers up to that point? ";
+  std::cin >> y;
 
-  string y;
-  cout << endl << "Do you want to know all the numbers up to that point? ";
-  cin >> y;
-
-  if (listChecker(yesList, y)) {
+  if (y == "y" or y == "Y") {
     for (int k = 1; k <= number; ++k) {
-      cout << endl << k << " is " << primer(k);
+      std::cout << std::endl << k << " is " << primer(k);
     }
   } else {
-    cout << endl << number << " is " << primer(number);
+    std::cout << std::endl << number << " is " << primer(number);
   }
 }
 
-string primer(int n) {
+std::string primer(int n) {
   int d = 1;
 
-  for (int i = 1; i <= ceil((n + 1) / 2); ++i) {
+  for (int i = 1; i <= ceil((n + 1) / 2); i++) {
     if (n % i == 0) {
       d += 1;
     }
@@ -47,16 +41,4 @@ string primer(int n) {
   } else {
     return "Composite";
   }
-}
-
-bool listChecker(list<string> searchedList, string searchedWord) {
-  bool result = false;
-
-  for (string comparer : searchedList) {
-    if (comparer == searchedWord) {
-      result = true;
-    }
-  };
-
-  return result;
 }
